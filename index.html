@@ -294,19 +294,38 @@
         //     }
         // }
 
-        const mixedArray = [
-            "true",
-            "false",
-            "Midul",
-            "",
-            10,
-            null
-        ]
+        // // remove the falsy value from array
+        // const mixedArray = [
+        //     "true",
+        //     "false",
+        //     "Midul",
+        //     "",
+        //     10,
+        //     null
+        // ]
 
-        const resultArray = mixedArray.filter(Boolean)
-        console.log(resultArray)
+        // const resultArray = mixedArray.filter(Boolean)
+        // console.log(resultArray)
 
+        // remove the falsy value from object
+
+        const mixedArray = {
+            a:"mridul",
+            b:false,
+            c:true,
+            d:1,
+            e:"undefined"
+        }    
         
+        const truthyObject = function(mixedArray){
+            for(let i in mixedArray){
+                if(!mixedArray[i]){
+                    delete mixedArray[i]
+                }
+            }
+            return mixedArray;
+        }
+        console.log(truthyObject(mixedArray))
 
 
 
