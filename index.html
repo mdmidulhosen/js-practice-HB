@@ -214,14 +214,28 @@
                 // const result = text.replace(/New/gi, "old")
                 // document.getElementById("demo").innerHTML = result;
                 // }
+                
+                // match method
+                // const text = "lets start something new and find New One";
+                // document.getElementById("demo").innerHTML = text;
 
-                const text = "lets start something new and find New One";
-                document.getElementById("demo").innerHTML = text;
+                // function TryItBtn(){
+                // const result = text.match(/(new)/gi)
+                // document.getElementById("demo").innerHTML = result;
+                // }
 
-                function TryItBtn(){
-                const result = text.match(/(new)/gi)
-                document.getElementById("demo").innerHTML = result;
+                // var car = "Farari";
+                // console.log(window.car)
+
+                class Car{
+                    constructor(name, year){
+                        this.name = name;
+                        this.year = year;
+                    }
                 }
+
+                const car1 = new Car("Toyota", 2016);
+                console.log(car1.name)
 
 
 
