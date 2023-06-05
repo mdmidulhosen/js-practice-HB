@@ -242,25 +242,40 @@
 
         // car1.model()
 
-        let Person = '{ "employees" : [' +
-            '{ "firstName":"John" , "lastName":"Doe" },' +
-            '{ "firstName":"Anna" , "lastName":"Smith" },' +
-            '{ "firstName":"Peter" , "lastName":"Jones" } ]}';
+        // let Person = '{ "employees" : [' +
+        //     '{ "firstName":"John" , "lastName":"Doe" },' +
+        //     '{ "firstName":"Anna" , "lastName":"Smith" },' +
+        //     '{ "firstName":"Peter" , "lastName":"Jones" } ]}';
 
-        const test = JSON.parse(Person)
+        // const test = JSON.parse(Person)
 
-        console.log(test)
-        console.log(Person)
+        // console.log(test)
+        // console.log(Person)
 
-        console.log(test.employees[2].firstName)
+        // console.log(test.employees[2].firstName)
 
-        let car = {
-            name:"Toyota",
-            model:"2018"
+        // let car = {
+        //     name:"Toyota",
+        //     model:"2018"
+        // }
+
+        // console.log(JSON.stringify(car))
+
+        // find the largest string and that string's index from array
+
+        function longestString(names){
+            let longestWord = "";
+
+            for(name of names){
+                if(name.length > longestWord.length){
+                    longestWord = name;
+                }
+            }
+            return[longestWord, names.indexOf(longestWord)]
+
         }
 
-        console.log(car)
-        console.log(JSON.stringify(car))
+        console.log(longestString(["s","Mridul Hosen", "Mridul", "Kibria", "Muhammad Mridul Hosen Kibria", "Muhammad Kibria", "Muhammad Mridul Kibria"]))
 
 
 
