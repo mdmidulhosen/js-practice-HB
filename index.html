@@ -277,20 +277,34 @@
 
         // console.log(longestString(["s","Mridul Hosen", "Mridul", "Kibria", "Muhammad Mridul Hosen Kibria", "Muhammad Kibria", "Muhammad Mridul Kibria"]))
 
-        const number = 100;
+
+
+        // const number = 100;
         
-        for(let i = 1; i < number; i++){
-            if(i % 3 === 0 && i % 5 === 0){
-                console.log(`${i} fizzbuzz (3-5)`);
-            }
-            else if(i % 3 === 0){
-                console.log(`${i} fizz (3)`);
-            }else if(i % 5 === 0){
-                console.log(`${i} buzz (5)`);
-            }else{
-                console.log(i)
-            }
-        }
+        // for(let i = 1; i < number; i++){
+        //     if(i % 3 === 0 && i % 5 === 0){
+        //         console.log(`${i} fizzbuzz (3-5)`);
+        //     }
+        //     else if(i % 3 === 0){
+        //         console.log(`${i} fizz (3)`);
+        //     }else if(i % 5 === 0){
+        //         console.log(`${i} buzz (5)`);
+        //     }else{
+        //         console.log(i)
+        //     }
+        // }
+
+        const mixedArray = [
+            "true",
+            "false",
+            "Midul",
+            "",
+            10,
+            null
+        ]
+
+        const resultArray = mixedArray.filter(Boolean)
+        console.log(resultArray)
 
         
 
