@@ -261,23 +261,38 @@
 
         // console.log(JSON.stringify(car))
 
-        // find the largest string and that string's index from array
+        // // find the largest string and that string's index from array
 
-        function longestString(names){
-            let longestWord = "";
+        // function longestString(names){
+        //     let longestWord = "";
 
-            for(name of names){
-                if(name.length > longestWord.length){
-                    longestWord = name;
-                }
+        //     for(name of names){
+        //         if(name.length > longestWord.length){
+        //             longestWord = name;
+        //         }
+        //     }
+        //     return[longestWord, names.indexOf(longestWord)]
+
+        // }
+
+        // console.log(longestString(["s","Mridul Hosen", "Mridul", "Kibria", "Muhammad Mridul Hosen Kibria", "Muhammad Kibria", "Muhammad Mridul Kibria"]))
+
+        const number = 100;
+        
+        for(let i = 1; i < number; i++){
+            if(i % 3 === 0 && i % 5 === 0){
+                console.log(`${i} fizzbuzz (3-5)`);
             }
-            return[longestWord, names.indexOf(longestWord)]
-
+            else if(i % 3 === 0){
+                console.log(`${i} fizz (3)`);
+            }else if(i % 5 === 0){
+                console.log(`${i} buzz (5)`);
+            }else{
+                console.log(i)
+            }
         }
 
-        console.log(longestString(["s","Mridul Hosen", "Mridul", "Kibria", "Muhammad Mridul Hosen Kibria", "Muhammad Kibria", "Muhammad Mridul Kibria"]))
-
-
+        
 
 
 
