@@ -232,10 +232,14 @@
                         this.name = name;
                         this.year = year;
                     }
+                    model(){
+                        console.log(this.year)
+                    }
                 }
 
                 const car1 = new Car("Toyota", 2016);
-                console.log(car1.name)
+                
+                car1.model()
 
 
 
