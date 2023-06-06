@@ -380,15 +380,40 @@
 
         // bmw.run("100 km per hour")
 
-        function calculator(num1, num2, callback){
-            let sum = num1 + num2;
-            if(callback) callback(sum);
-            return sum
-        }
+        // function calculator(num1, num2, callback){
+        //     let sum = num1 + num2;
+        //     if(callback) callback(sum);
+        //     return sum
+        // }
 
-        calculator(5, 12, function(result){
-            console.log(result)
+        // calculator(5, 12, function(result){
+        //     console.log(result)
+        // })
+
+        const status = false;
+
+        console.log("task 1");
+
+        const promise = new Promise(function(resolve, reject){
+            setTimeout(function(){
+                if(status){
+                    resolve("task 2");
+                }else{
+                    reject("failed")
+                }
+            },2000)
         })
+
+        promise
+        .then(function(value){
+            console.log(value)
+        })
+        .catch(function(err){
+            console.log(err);
+        })
+
+        console.log("task 3");
+
 
 
     </script>
