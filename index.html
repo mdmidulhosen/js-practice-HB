@@ -340,32 +340,45 @@
         // mridul.country = "Bangladesh";
         // console.log(mridul);
 
-        const numbers = {};
+        // Object make iterator
+        // const numbers = {};
 
+        // numbers[Symbol.iterator] = function () {
+        //     let n = 0;
+        //     let done = false;
 
+        //     return {
+        //         next() {
+        //             n += 10;
+        //             if (n == 100) {done = true} {
+        //                 return {
+        //                     value: n,
+        //                     done: done,
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
+        // for (let number of numbers) {
+        //     console.log(number)
+        // }
+        // // console.dir(numbers)
 
-        numbers[Symbol.iterator] = function () {
-            let n = 0;
-            let done = false;
+            class Car {
+                constructor(name, year){
+                    this.name = name;
+                    this.year = year;
+                }
 
-            return {
-                next() {
-                    n += 10;
-                    if (n == 100) {done = true} {
-                        return {
-                            value: n,
-                            done: done,
-                        }
-                    }
+                run(speed){
+                    console.log(this.name + ` is running in ` + speed)
                 }
             }
-        }
-        for (let number of numbers) {
-            console.log(number)
-        }
-        // console.dir(numbers)
 
+            const bmw = new Car("BMW", 1999);
+            const audi = new Car("Audi", 2006);
 
+            bmw.run("100 km per hour")
 
 
 
