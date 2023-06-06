@@ -26,7 +26,7 @@
 
         /* Learn with Sumit javascript bangla tutorial 17*/
 
-        // indexOf 
+        // indexOf
         // let string = "hi there, my name is mridul hosen kibria"
         // var check = string.indexOf("kibria");
         // console.log(check);
@@ -158,7 +158,7 @@
         //     console.log(x)
         // }
 
-        // while loop 
+        // while loop
         // let i = 0;
         // let text = "";
 
@@ -206,7 +206,7 @@
         // console.log(d)
 
         // regular expression
-        // replace method 
+        // replace method
         // const text = "lets start something new and find New One";
         // document.getElementById("demo").innerHTML = text;
 
@@ -227,7 +227,7 @@
         // var car = "Farari";
         // console.log(window.car)
 
-        // javascript class 
+        // javascript class
         // class Car{
         //     constructor(name, year){
         //         this.name = name;
@@ -315,7 +315,7 @@
         //     c:true,
         //     d:1,
         //     e:"undefined"
-        // }    
+        // }
 
         // const truthyObject = function(mixedArray){
         //     for(let i in mixedArray){
@@ -364,22 +364,31 @@
         // }
         // // console.dir(numbers)
 
-            class Car {
-                constructor(name, year){
-                    this.name = name;
-                    this.year = year;
-                }
+        // class Car {
+        //     constructor(name, year){
+        //         this.name = name;
+        //         this.year = year;
+        //     }
 
-                run(speed){
-                    console.log(this.name + ` is running in ` + speed)
-                }
-            }
+        //     run(speed){
+        //         console.log(this.name + ` is running in ` + speed)
+        //     }
+        // }
 
-            const bmw = new Car("BMW", 1999);
-            const audi = new Car("Audi", 2006);
+        // const bmw = new Car("BMW", 1999);
+        // const audi = new Car("Audi", 2006);
 
-            bmw.run("100 km per hour")
+        // bmw.run("100 km per hour")
 
+        function calculator(num1, num2, callback){
+            let sum = num1 + num2;
+            if(callback) callback(sum);
+            return sum
+        }
+
+        calculator(5, 12, function(result){
+            console.log(result)
+        })
 
 
     </script>
