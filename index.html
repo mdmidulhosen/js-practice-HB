@@ -280,7 +280,7 @@
 
 
         // const number = 100;
-        
+
         // for(let i = 1; i < number; i++){
         //     if(i % 3 === 0 && i % 5 === 0){
         //         console.log(`${i} fizzbuzz (3-5)`);
@@ -316,7 +316,7 @@
         //     d:1,
         //     e:"undefined"
         // }    
-        
+
         // const truthyObject = function(mixedArray){
         //     for(let i in mixedArray){
         //         if(!mixedArray[i]){
@@ -327,18 +327,45 @@
         // }
         // console.log(truthyObject(mixedArray))
 
-        function Person(fName, lName, age){
-            this.firstName = fName;
-            this.lastName  = lName;
-            this.Age       = age;
-            this.fullName  = function(){
-                return this.firstName + ' ' + this.lastName
+        // function Person(fName, lName, age){
+        //     this.firstName = fName;
+        //     this.lastName  = lName;
+        //     this.Age       = age;
+        //     this.fullName  = function(){
+        //         return this.firstName + ' ' + this.lastName
+        //     }
+        // }
+
+        // const mridul = new Person("Muhammad", "Mridul", 21);
+        // mridul.country = "Bangladesh";
+        // console.log(mridul);
+
+        const numbers = {};
+
+
+
+        numbers[Symbol.iterator] = function () {
+            let n = 0;
+            let done = false;
+
+            return {
+                next() {
+                    n += 10;
+                    if (n == 100) {done = true} {
+                        return {
+                            value: n,
+                            done: done,
+                        }
+                    }
+                }
             }
         }
-        
-        const mridul = new Person("Muhammad", "Mridul", 21);
-        mridul.country = "Bangladesh";
-        console.log(mridul)
+        for (let number of numbers) {
+            console.log(number)
+        }
+        // console.dir(numbers)
+
+
 
 
 
