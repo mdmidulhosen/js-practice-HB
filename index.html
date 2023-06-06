@@ -390,10 +390,13 @@
         //     console.log(result)
         // })
 
+
+        // javascript promises
         const status = false;
 
         console.log("task 1");
 
+        // promise defination
         const promise = new Promise(function(resolve, reject){
             setTimeout(function(){
                 if(status){
@@ -404,6 +407,7 @@
             },2000)
         })
 
+        // promise call
         promise
         .then(function(value){
             console.log(value)
