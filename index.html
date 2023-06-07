@@ -17,8 +17,9 @@
 
     <div class="container">
         <h1 class="text-center">JS Practice</h1>
-        <h5 id="demo"></h5>
-        <button class="btn btn-sm btn-primary" onclick="TryItBtn()">Try It</button>
+        <h1 class="text-center mb-5">--------------------</h1>
+        <h5 id="demo" class="text-center"></h5>
+        <!-- <button class="btn btn-sm btn-primary" onclick="TryItBtn()">Try It</button> -->
     </div>
 
 
@@ -418,44 +419,56 @@
 
         // console.log("task 3");
 
-        const marks = 81;
+        const marks = 84;
         const paymentSuccess = true
 
-        function enrooll(callback){
+        function enrooll(){
            document.getElementById("demo").innerHTML = "Course enrollments is in progress.";
 
-            setTimeout(function(){
+            return promise = new Promise(function(resolve, reject){
+                setTimeout(function(){
                 if(paymentSuccess){
-                    callback()
+                    resolve()
                 }else{
-                    document.getElementById("demo").innerHTML = "Payment failed"
+                    reject(document.getElementById("demo").innerHTML = "Payment failed") 
                 }
             }, 2000)
+            })
         }
 
-        function progress(callback){
+        function progress(){
             document.getElementById("demo").innerHTML = "Course on progress";
 
-            setTimeout(function(){
+            return promise = new Promise(function(resolve, reject){
+                setTimeout(function(){
                 if(marks >= 80){
-                    callback()
+                    resolve()
                 }else{
-                    document.getElementById("demo").innerHTML = "You don't have enough marks to get certificate"
+                    reject(document.getElementById("demo").innerHTML = "You don't have enough marks to get certificate")
                 }
             }, 3000)
+            })
         }
 
         function certificate(){
             document.getElementById("demo").innerHTML = "Preparing your certificate";
 
-            setTimeout(function(){
-                document.getElementById("demo").innerHTML = "Congrats! You got the certificate"
+            return promise = new Promise(function(resolve){
+                setTimeout(function(){
+                resolve(document.getElementById("demo").innerHTML = "Congrats! You got the certificate")
             }, 1000)
+            })
         }
 
-        enrooll(function(){
-            progress(certificate);
-        })
+        enrooll()
+            .then(progress)
+            .then(certificate)
+            .then(function(value){
+                console.log(value)
+            })
+            .catch(function(err){
+                console.log(err)
+            })
 
 
 
