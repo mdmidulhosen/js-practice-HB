@@ -392,31 +392,70 @@
 
 
         // javascript promises
-        const status = false;
+        // const status = false;
 
-        console.log("task 1");
+        // console.log("task 1");
 
-        // promise defination
-        const promise = new Promise(function(resolve, reject){
+        // promise definition
+        // const promise = new Promise(function(resolve, reject){
+        //     setTimeout(function(){
+        //         if(status){
+        //             resolve("task 2");
+        //         }else{
+        //             reject("failed")
+        //         }
+        //     },2000)
+        // })
+
+        // // promise call
+        // promise
+        // .then(function(value){
+        //     console.log(value)
+        // })
+        // .catch(function(err){
+        //     console.log(err);
+        // })
+
+        // console.log("task 3");
+
+        const marks = 81;
+        const paymentSuccess = true
+
+        function enrooll(callback){
+           document.getElementById("demo").innerHTML = "Course enrollments is in progress.";
+
             setTimeout(function(){
-                if(status){
-                    resolve("task 2");
+                if(paymentSuccess){
+                    callback()
                 }else{
-                    reject("failed")
+                    document.getElementById("demo").innerHTML = "Payment failed"
                 }
-            },2000)
-        })
+            }, 2000)
+        }
 
-        // promise call
-        promise
-        .then(function(value){
-            console.log(value)
-        })
-        .catch(function(err){
-            console.log(err);
-        })
+        function progress(callback){
+            document.getElementById("demo").innerHTML = "Course on progress";
 
-        console.log("task 3");
+            setTimeout(function(){
+                if(marks >= 80){
+                    callback()
+                }else{
+                    document.getElementById("demo").innerHTML = "You don't have enough marks to get certificate"
+                }
+            }, 3000)
+        }
+
+        function certificate(){
+            document.getElementById("demo").innerHTML = "Preparing your certificate";
+
+            setTimeout(function(){
+                document.getElementById("demo").innerHTML = "Congrats! You got the certificate"
+            }, 1000)
+        }
+
+        enrooll(function(){
+            progress(certificate);
+        })
 
 
 
