@@ -422,53 +422,65 @@
         const marks = 84;
         const paymentSuccess = true
 
-        function enrooll(){
-           document.getElementById("demo").innerHTML = "Course enrollments is in progress.";
+        function enrooll() {
+            document.getElementById("demo").innerHTML = "Course enrollments is in progress.";
 
-            return promise = new Promise(function(resolve, reject){
-                setTimeout(function(){
-                if(paymentSuccess){
-                    resolve()
-                }else{
-                    reject(document.getElementById("demo").innerHTML = "Payment failed") 
-                }
-            }, 2000)
+            const promise = new Promise(function (resolve, reject) {
+                setTimeout(function () {
+                    if (paymentSuccess) {
+                        resolve()
+                    } else {
+                        reject(document.getElementById("demo").innerHTML = "Payment failed")
+                    }
+                }, 2000)
             })
+
+            return promise;
+
         }
 
-        function progress(){
+        function progress() {
             document.getElementById("demo").innerHTML = "Course on progress";
 
-            return promise = new Promise(function(resolve, reject){
-                setTimeout(function(){
-                if(marks >= 80){
-                    resolve()
-                }else{
-                    reject(document.getElementById("demo").innerHTML = "You don't have enough marks to get certificate")
-                }
-            }, 3000)
+            const promise = new Promise(function (resolve, reject) {
+                setTimeout(function () {
+                    if (marks >= 80) {
+                        resolve()
+                    } else {
+                        reject(document.getElementById("demo").innerHTML = "You don't have enough marks to get certificate")
+                    }
+                }, 3000)
             })
+
+            return promise;
         }
 
-        function certificate(){
+        function certificate() {
             document.getElementById("demo").innerHTML = "Preparing your certificate";
 
-            return promise = new Promise(function(resolve){
-                setTimeout(function(){
-                resolve(document.getElementById("demo").innerHTML = "Congrats! You got the certificate")
-            }, 1000)
+            const promise = new Promise(function (resolve) {
+                setTimeout(function () {
+                    resolve(document.getElementById("demo").innerHTML = "Congrats! You got the certificate")
+                }, 1000)
             })
+
+            return promise;
+
         }
 
-        enrooll()
-            .then(progress)
-            .then(certificate)
-            .then(function(value){
-                console.log(value)
-            })
-            .catch(function(err){
+        async function course() {
+            try {
+                await enrooll();
+                await progress();
+                const message = await certificate();
+
+                document.getElementById("demo").innerHTML = message
+            } catch (err) {
                 console.log(err)
-            })
+            }
+        }
+
+        course()
 
 
 
