@@ -465,12 +465,22 @@
 
         
         // form validation
-        function validateForm(){
-            let value = document.forms["myForm"]["fname"].value;
-            if(value == ""){
-                alert("You must enter your name")
-                return false
+        // function validateForm(){
+        //     let value = document.forms["myForm"]["fname"].value;
+        //     if(value == ""){
+        //         alert("You must enter your name")
+        //         return false
+        //     }else{
+        //         return true
+        //     }
+        // }
+
+        function validation(){
+            const input = document.getElementById("id1");
+            
+            if(input.checkValidity()){
+                document.getElementById("demo").innerHTML = "Number Is Perfect"
             }else{
-                return true
+                document.getElementById("demo").innerHTML = input.validationMessage
             }
         }
