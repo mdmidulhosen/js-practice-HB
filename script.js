@@ -487,10 +487,17 @@
         // }
 
         const demo = document.getElementById("demo")
-        function getData(){
-            fetch("http://127.0.0.1:5500/data.txt")
-                .then((res => res.text()))
-                .then((data) =>{
-                    demo.innerHTML = data
-                })
+
+        async function getData(){
+            const res = await fetch("http://127.0.0.1:5500/data.txt")
+            const result = await res.text()
+            demo.innerHTML = result;
         }
+
+        // function getData(){
+        //     fetch("http://127.0.0.1:5500/data.txt")
+        //         .then((res => res.text()))
+        //         .then((data) =>{
+        //             demo.innerHTML = data
+        //         })
+        // }
