@@ -475,12 +475,22 @@
         //     }
         // }
 
-        function validation(){
-            const input = document.getElementById("id1");
+        // input field validation
+        // function validation(){
+        //     const input = document.getElementById("id1");
             
-            if(input.checkValidity()){
-                document.getElementById("demo").innerHTML = "Number Is Perfect"
-            }else{
-                document.getElementById("demo").innerHTML = input.validationMessage
-            }
+        //     if(input.checkValidity()){
+        //         document.getElementById("demo").innerHTML = "Number Is Perfect"
+        //     }else{
+        //         document.getElementById("demo").innerHTML = input.validationMessage
+        //     }
+        // }
+
+        const demo = document.getElementById("demo")
+        function getData(){
+            fetch("http://127.0.0.1:5500/data.txt")
+                .then((res => res.text()))
+                .then((data) =>{
+                    demo.innerHTML = data
+                })
         }
