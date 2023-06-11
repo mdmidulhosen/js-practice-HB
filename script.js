@@ -491,50 +491,62 @@ let demo = document.getElementById("demo");
 
 /*geolocation*/
 
-function getLocation() {
-  if (navigator.geolocation) {
-    // navigator.geolocation.getCurrentPosition(showPosition, showError);
-    navigator.geolocation.watchPosition(showPosition, showError);
-  } else {
-    demo.innerHTML = "GeoLocation Not Available In Your Browser";
-  }
-}
+// function getLocation() {
+//   if (navigator.geolocation) {
+//     // navigator.geolocation.getCurrentPosition(showPosition, showError);
+//     navigator.geolocation.watchPosition(showPosition, showError);
+//   } else {
+//     demo.innerHTML = "GeoLocation Not Available In Your Browser";
+//   }
+// }
 
-function showPosition(position) {
-  demo.innerHTML =
-    "Latitude: " +
-    position.coords.latitude +
-    "</br>Longitude: " +
-    position.coords.longitude +
-    "</br>Accuracy: " +
-    position.coords.accuracy +
-    "</br>Altitude: " +
-    position.coords.altitude +
-    "</br>AltitudeAccuracy: " +
-    position.coords.altitudeAccuracy +
-    "</br>Heading: " +
-    position.coords.heading +
-    "</br>Speed: " +
-    position.coords.speed +
-    "</br>Timestamp: " +
-    position.timestamp;
-}
+// function showPosition(position) {
+//   demo.innerHTML =
+//     "Latitude: " +
+//     position.coords.latitude +
+//     "</br>Longitude: " +
+//     position.coords.longitude +
+//     "</br>Accuracy: " +
+//     position.coords.accuracy +
+//     "</br>Altitude: " +
+//     position.coords.altitude +
+//     "</br>AltitudeAccuracy: " +
+//     position.coords.altitudeAccuracy +
+//     "</br>Heading: " +
+//     position.coords.heading +
+//     "</br>Speed: " +
+//     position.coords.speed +
+//     "</br>Timestamp: " +
+//     position.timestamp;
+// }
 
-function showError(error) {
-  switch (error.code) {
-    case error.PERMISSION_DENIED:
-      demo.innerHTML = "User denied the request for Geolocation.";
-      break;
-    case error.POSITION_UNAVAILABLE:
-      demo.innerHTML = "Location information is unavailable.";
-      break;
-    case error.TIMEOUT:
-      demo.innerHTML = "The request to get user location timed out.";
-      break;
-    case error.UNKNOWN_ERROR:
-      demo.innerHTML = "An unknown error occurred.";
-      break;
-  }
+// function showError(error) {
+//   switch (error.code) {
+//     case error.PERMISSION_DENIED:
+//       demo.innerHTML = "User denied the request for Geolocation.";
+//       break;
+//     case error.POSITION_UNAVAILABLE:
+//       demo.innerHTML = "Location information is unavailable.";
+//       break;
+//     case error.TIMEOUT:
+//       demo.innerHTML = "The request to get user location timed out.";
+//       break;
+//     case error.UNKNOWN_ERROR:
+//       demo.innerHTML = "An unknown error occurred.";
+//       break;
+//   }
+// }
+
+function onData(){
+    XHR = new XMLHttpRequest;
+
+    XHR.onload = function(){
+        demo.innerHTML = XHR.responseText
+    }
+
+    XHR.open("GET", "https://jsonplaceholder.typicode.com/photos");
+
+    XHR.send()
 }
 
 
